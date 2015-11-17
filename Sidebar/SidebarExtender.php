@@ -1,7 +1,5 @@
 <?php namespace Modules\Notification\Sidebar;
 
-use Maatwebsite\Sidebar\Group;
-use Maatwebsite\Sidebar\Item;
 use Maatwebsite\Sidebar\Menu;
 use Modules\Core\Contracts\Authentication;
 
