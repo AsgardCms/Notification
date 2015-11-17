@@ -1,0 +1,39 @@
+{
+	"name": "asgardcms/notification-module",
+	"description": "Module handling the real time notifications",
+    "type": "asgard-module",
+    "keywords": [
+        "asgardcms",
+        "notifications",
+        "pusher"
+    ],
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=5.4",
+        "composer/installers": "~1.0",
+        "asgardcms/core-module": "~1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0",
+        "orchestra/testbench": "~3.1"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Notification\\": ".",
+            "Modules\\": "Modules/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+	"autoload": {
+		"psr-4": {
+			"Modules\\Notification\\": ""
+		}
+	}
+}

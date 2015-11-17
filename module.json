@@ -1,0 +1,20 @@
+{
+    "name": "Notification",
+    "alias": "notification",
+    "description": "Module handling the real time notifications",
+    "version": "0.1",
+    "keywords": [
+        "asgardcms",
+        "notifications",
+        "pusher"
+    ],
+    "active": 1,
+    "order": 1,
+    "providers": [
+        "Modules\\Notification\\Providers\\NotificationServiceProvider",
+        "Modules\\Notification\\Providers\\RouteServiceProvider"
+    ],
+    "aliases":{},
+    "files": [
+    ]
+}
