@@ -1,6 +1,6 @@
 # Notification module
 
-[![Latest Version](https://img.shields.io/packagist/v/asgardcms/notification.svg?style=flat-square)](https://github.com/asgardcms/notification/releases)
+[![Latest Version](https://img.shields.io/packagist/v/asgardcms/notification-module.svg?style=flat-square)](https://github.com/asgardcms/notification/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Quality Score](https://img.shields.io/scrutinizer/g/asgardcms/notification.svg?style=flat-square)](https://scrutinizer-ci.com/g/asgardcms/notification)
 [![SensioLabs Insight](https://img.shields.io/sensiolabs/i/0d8f61c7-0e2f-46b2-9f63-91f4d5abeca5.svg)](https://insight.sensiolabs.com/projects/0d8f61c7-0e2f-46b2-9f63-91f4d5abeca5)
