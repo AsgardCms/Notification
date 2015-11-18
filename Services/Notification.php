@@ -38,6 +38,15 @@ class Notification
             'message' => $message,
         ]);
 
+        $this->triggerEventFor($notification);
+    }
+
+    /**
+     * Trigger the broadcast event for the given notification
+     * @param \Modules\Notification\Entities\Notification $notification
+     */
+    private function triggerEventFor(\Modules\Notification\Entities\Notification $notification)
+    {
         event(new BroadcastNotification($notification));
     }
 }
