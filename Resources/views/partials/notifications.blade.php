@@ -17,8 +17,8 @@
                 <ul class="menu notifications-list">
                     <?php if ($notifications->count() === 0): ?>
                     <li class="noNotifications">
-                        <a href="">
-                            No notifications
+                        <a href="#">
+                            {{ trans('notification::messages.no notifications') }}
                         </a>
                     </li>
                     <?php endif; ?>
