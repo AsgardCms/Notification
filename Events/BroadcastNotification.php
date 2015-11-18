@@ -1,10 +1,11 @@
 <?php namespace Modules\Notification\Events;
 
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\SerializesModels;
 use Modules\Notification\Entities\Notification;
 
-class BroadcastNotification implements ShouldBroadcast
+class BroadcastNotification implements ShouldBroadcast, ShouldQueue
 {
     use SerializesModels;
 
