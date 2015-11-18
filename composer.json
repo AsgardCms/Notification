@@ -29,6 +29,12 @@
             "Modules\\": "Modules/"
         }
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/nWidart/modules"
+        }
+    ],
     "minimum-stability": "dev",
     "prefer-stable": true,
 	"autoload": {
