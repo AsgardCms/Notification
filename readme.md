@@ -73,4 +73,3 @@ $this->notification->to($userId)->push('New subscription', 'Someone has subscrib
 ## Todo
 
 - Add a way to mark notifications as read
--
