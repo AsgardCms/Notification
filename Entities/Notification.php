@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property bool is_read
  * @property \Carbon\Carbon created_at
  * @property \Carbon\Carbon updated_at
+ * @property int user_id
  */
 class Notification extends Model
 {
