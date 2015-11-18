@@ -18,6 +18,9 @@ class Notification extends Model
     protected $fillable = ['user_id', 'type', 'message', 'icon_class', 'link', 'is_read', 'title'];
     protected $appends = ['time_ago'];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function user()
     {
         $driver = config('asgard.user.users.driver');
@@ -25,6 +28,10 @@ class Notification extends Model
         return $this->belongsTo("Modules\\User\\Entities\\{$driver}\\User");
     }
 
+    /**
+     * Return the created time in difference for humans (2 min ago)
+     * @return string
+     */
     public function getTimeAgoAttribute()
     {
         return $this->created_at->diffForHumans();
