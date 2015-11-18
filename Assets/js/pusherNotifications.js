@@ -1,4 +1,4 @@
-;(function ( $, window, document, undefined ) {
+;(function ($, window, document, undefined) {
     "use strict";
     var pluginName = "pusherNotifications",
         defaults = {
@@ -6,28 +6,28 @@
             noNotifications: ".noNotifications"
         };
 
-    function pusherNotifications ( element, options ) {
+    function pusherNotifications(element, options) {
         this.element = element;
-        this.settings = $.extend( {}, defaults, options );
+        this.settings = $.extend({}, defaults, options);
         this._defaults = defaults;
         this._name = pluginName;
         this.init();
     }
 
     $.extend(pusherNotifications.prototype, {
-        getTemplate: function() {
+        getTemplate: function () {
             return '<li>' +
                 '<a href="#">' +
-                    '<div class="pull-left notificationIcon"><i class="iconClass"></i></div>' +
-                    '<h4>' +
-                    'notificationTitle' +
-                    '<small><i class="fa fa-clock-o"></i> timeAgo</small>' +
-                    '</h4>' +
-                    '<p>notificationMessage</p>' +
+                '<div class="pull-left notificationIcon"><i class="iconClass"></i></div>' +
+                '<h4>' +
+                'notificationTitle' +
+                '<small><i class="fa fa-clock-o"></i> timeAgo</small>' +
+                '</h4>' +
+                '<p>notificationMessage</p>' +
                 '</a>' +
-            '</li>';
+                '</li>';
         },
-        prepareTemplate: function(message) {
+        prepareTemplate: function (message) {
             var template = this.getTemplate();
             template = template.replace('iconClass', message.notification.icon_class);
             template = template.replace('#', message.notification.link);
@@ -42,7 +42,7 @@
             var count = parseInt($(self.settings.notificationsCounter).text());
             $(self.settings.notificationsCounter).text(count + 1);
             $(self.settings.notificationsCounter).addClass('bounce');
-            setTimeout(function() {
+            setTimeout(function () {
                 $(self.settings.notificationsCounter).removeClass('bounce');
             }, 1000);
         },
@@ -50,7 +50,7 @@
             var self = this;
             this.pusher = new Pusher(this.settings.pusherKey);
             this.pusherChannel = this.pusher.subscribe('asgardcms.notifications');
-            this.pusherChannel.bind('Modules\\Notification\\Events\\BroadcastNotification', function(message) {
+            this.pusherChannel.bind('Modules\\Notification\\Events\\BroadcastNotification', function (message) {
                 if ($(self.settings.noNotifications).length) {
                     $(self.settings.noNotifications).remove();
                 }
@@ -61,12 +61,12 @@
         }
     });
 
-    $.fn[ pluginName ] = function ( options ) {
-        return this.each(function() {
-            if ( !$.data( this, "plugin_" + pluginName ) ) {
-                $.data( this, "plugin_" + pluginName, new pusherNotifications( this, options ) );
+    $.fn[pluginName] = function (options) {
+        return this.each(function () {
+            if (!$.data(this, "plugin_" + pluginName)) {
+                $.data(this, "plugin_" + pluginName, new pusherNotifications(this, options));
             }
         });
     };
 
-})( jQuery, window, document );
+})(jQuery, window, document);
