@@ -19,6 +19,7 @@ public function push($title, $message, $icon, $link = null);
  ```
 
 ![Notifications demo screenshot](https://cldup.com/Dvb8rrcJLv.thumb.png)
+[Quick demo](http://quick.as/7rasgvgv)
 ***
 
 ## Installation
