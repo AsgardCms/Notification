@@ -38,7 +38,9 @@ class Notification
             'message' => $message,
         ]);
 
-        $this->triggerEventFor($notification);
+        if (true === config('asgard.notification.config.real-time', false)) {
+            $this->triggerEventFor($notification);
+        }
     }
 
     /**
