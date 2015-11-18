@@ -1,11 +1,13 @@
 <?php namespace Modules\Notification\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Modules\Core\Contracts\Authentication;
 use Modules\Notification\Composers\NotificationViewComposer;
 use Modules\Notification\Entities\Notification;
 use Modules\Notification\Repositories\Cache\CacheNotificationDecorator;
 use Modules\Notification\Repositories\Eloquent\EloquentNotificationRepository;
 use Modules\Notification\Repositories\NotificationRepository;
+use Modules\Notification\Services\AsgardNotification;
 
 class NotificationServiceProvider extends ServiceProvider
 {
@@ -49,6 +51,10 @@ class NotificationServiceProvider extends ServiceProvider
                 return new CacheNotificationDecorator($repository);
             }
         );
+
+        $this->app->bind(\Modules\Notification\Services\Notification::class, function ($app) {
+            return new AsgardNotification($app[NotificationRepository::class], $app[Authentication::class]);
+        });
     }
 
     private function registerViewComposers()
