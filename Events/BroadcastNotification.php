@@ -25,6 +25,6 @@ class BroadcastNotification implements ShouldBroadcast, ShouldQueue
      */
     public function broadcastOn()
     {
-        return ['asgardcms.notifications'];
+        return ['asgardcms.notifications.' . $this->notification->user_id];
     }
 }

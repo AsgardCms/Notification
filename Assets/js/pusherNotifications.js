@@ -49,7 +49,7 @@
         init: function () {
             var self = this;
             this.pusher = new Pusher(this.settings.pusherKey);
-            this.pusherChannel = this.pusher.subscribe('asgardcms.notifications');
+            this.pusherChannel = this.pusher.subscribe('asgardcms.notifications.' + this.settings.loggedInUserId);
             this.pusherChannel.bind('Modules\\Notification\\Events\\BroadcastNotification', function (message) {
                 if ($(self.settings.noNotifications).length) {
                     $(self.settings.noNotifications).remove();
