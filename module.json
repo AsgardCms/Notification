@@ -2,7 +2,7 @@
     "name": "Notification",
     "alias": "notification",
     "description": "Module handling the real time notifications",
-    "version": "0.1",
+    "version": "0.1.0",
     "keywords": [
         "asgardcms",
         "notifications",

@@ -1,0 +1,5 @@
+url: https://github.com/AsgardCms/Core
+versions:
+    "0.1.0":
+        added:
+            - Initial release
