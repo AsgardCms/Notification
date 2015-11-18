@@ -14,6 +14,10 @@ final class AsgardNotification implements Notification
      * @var Authentication
      */
     private $auth;
+    /**
+     * @var int
+     */
+    private $userId;
 
     public function __construct(NotificationRepository $notification, Authentication $auth)
     {
@@ -31,7 +35,7 @@ final class AsgardNotification implements Notification
     public function push($title, $message, $icon, $link = null)
     {
         $notification = $this->notification->create([
-            'user_id' => $this->auth->check()->id,
+            'user_id' => $this->userId ?: $this->auth->check()->id,
             'icon_class' => $icon,
             'link' => $link,
             'title' => $title,
@@ -50,5 +54,17 @@ final class AsgardNotification implements Notification
     private function triggerEventFor(\Modules\Notification\Entities\Notification $notification)
     {
         event(new BroadcastNotification($notification));
+    }
+
+    /**
+     * Set a user id to set the notification to
+     * @param int $userId
+     * @return $this
+     */
+    public function to($userId)
+    {
+        $this->userId = $userId;
+
+        return $this;
     }
 }
