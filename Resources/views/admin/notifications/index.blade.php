@@ -127,8 +127,10 @@
 @stop
 @section('shortcuts')
     <dl class="dl-horizontal">
-        <dt><code>c</code></dt>
-        <dd>{{ trans('blog::category.title.create category') }}</dd>
+        <dt><code>r</code></dt>
+        <dd>{{ trans('notification::messages.mark all as read') }}</dd>
+        <dt><code>d + a</code></dt>
+        <dd>{{ trans('notification::messages.delete all') }}</dd>
     </dl>
 @stop
 
@@ -138,7 +140,8 @@
     $( document ).ready(function() {
         $(document).keypressAction({
             actions: [
-                { key: 'c', route: "<?= route('admin.notification.notification.create') ?>" }
+                { key: 'r', route: "<?= route('admin.notification.notification.markAllAsRead') ?>" },
+                { key: 'd a', route: "<?= route('admin.notification.notification.destroyAll') ?>" }
             ]
         });
     });
