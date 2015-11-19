@@ -68,8 +68,3 @@ $this->notification->push('New subscription', 'Someone has subscribed!', 'fa fa-
 ``` php
 $this->notification->to($userId)->push('New subscription', 'Someone has subscribed!', 'fa fa-hand-peace-o text-green', route('admin.user.user.index'));
 ```
-
-
-## Todo
-
-- Add a way to mark notifications as read
