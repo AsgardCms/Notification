@@ -7,6 +7,7 @@ return [
     'time' => 'Time',
     'title' => 'Title',
     'message' => 'Message',
+    'is read' => 'Is read',
     'mark all as read' => 'Mark all as read',
     'delete all' => 'Delete all',
     'all notifications deleted' => 'All your notifications were successfully deleted.',

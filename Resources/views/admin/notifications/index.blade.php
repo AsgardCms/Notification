@@ -31,6 +31,7 @@
                             <th>{{ trans('notification::messages.time') }}</th>
                             <th>{{ trans('notification::messages.title') }}</th>
                             <th>{{ trans('notification::messages.message') }}</th>
+                            <th>{{ trans('notification::messages.is read') }}</th>
                             <th width="10%">{{ trans('core::core.table.actions') }}</th>
                         </tr>
                     </thead>
@@ -54,6 +55,11 @@
                                     </a>
                                 </td>
                                 <td>
+                                    <a href="{{ $notification->link }}">
+                                        {{ $notification->is_read ? 'Read' : 'Un read' }}
+                                    </a>
+                                </td>
+                                <td>
                                     <div class="btn-group">
                                         <button class="btn btn-danger btn-flat" data-toggle="modal" data-target="#confirmation-{{ $notification->id }}"><i class="glyphicon glyphicon-trash"></i></button>
                                     </div>
@@ -67,6 +73,7 @@
                             <th>{{ trans('notification::messages.time') }}</th>
                             <th>{{ trans('notification::messages.title') }}</th>
                             <th>{{ trans('notification::messages.message') }}</th>
+                            <th>{{ trans('notification::messages.is read') }}</th>
                             <th>{{ trans('core::core.table.actions') }}</th>
                         </tr>
                     </tfoot>
@@ -158,6 +165,7 @@
                 "url": '<?php echo Module::asset("core:js/vendor/datatables/{$locale}.json") ?>'
             },
             "columns": [
+                null,
                 null,
                 null,
                 null,
