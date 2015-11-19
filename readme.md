@@ -48,7 +48,7 @@ php artisan module:publish notification
 
 #### Real time ?
 
-If you want real time notifications over websockets, you need to configure the `broadcast.php` config file. After that is done, set the `asgard.notification.config.real-time` option to `true`.
+If you want real time notifications over websockets, you need to configure the `broadcasting.php` config file. After that is done, set the `asgard.notification.config.real-time` option to `true`.
 
 Currently, [Laravel broadcasting](http://laravel.com/docs/5.1/events#broadcasting-events) supports Pusher and Redis, but AsgardCms only has the front-end integration for Pusher. More integrations are welcome via pull-request. Look at the [Pusher integration](https://github.com/AsgardCms/Notification/blob/master/Assets/js/pusherNotifications.js) for inspiration.
 
