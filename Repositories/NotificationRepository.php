@@ -20,4 +20,18 @@ interface NotificationRepository extends BaseRepository
      * @return bool
      */
     public function markNotificationAsRead($notificationId);
+
+    /**
+     * Get all the notifications for the given user id
+     * @param int $userId
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function allForUser($userId);
+
+    /**
+     * Get all the unread notifications for the given user id
+     * @param int $userId
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function allUnreadForUser($userId);
 }
