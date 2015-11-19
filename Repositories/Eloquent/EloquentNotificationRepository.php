@@ -26,4 +26,14 @@ final class EloquentNotificationRepository extends EloquentBaseRepository implem
 
         return $notification->save();
     }
+
+    public function all()
+    {
+        return $this->model->all();
+    }
+
+    public function find($id)
+    {
+        return $this->model->find($id);
+    }
 }
