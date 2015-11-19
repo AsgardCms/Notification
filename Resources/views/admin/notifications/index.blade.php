@@ -120,7 +120,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline btn-flat" data-dismiss="modal">{{ trans('core::core.button.cancel') }}</button>
-                {!! Form::open(['route' => ['admin.notification.notification.destroyAll', $notification->id], 'method' => 'delete', 'class' => 'pull-left']) !!}
+                {!! Form::open(['route' => ['admin.notification.notification.destroyAll'], 'method' => 'delete', 'class' => 'pull-left']) !!}
                 <button type="submit" class="btn btn-outline btn-flat"><i class="glyphicon glyphicon-trash"></i> {{ trans('core::core.button.delete') }}</button>
                 {!! Form::close() !!}
             </div>
