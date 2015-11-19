@@ -33,6 +33,7 @@
                     <?php endforeach; ?>
                 </ul>
             </div>
+            <li class="footer"><a href="{{ route('admin.notification.notification.index') }}">View all</a></li>
         </li>
     </ul>
 </li>
