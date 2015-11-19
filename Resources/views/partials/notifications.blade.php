@@ -1,11 +1,3 @@
-<style>
-    .notificationsCounter {
-        animation-duration: .5s;
-    }
-    .notificationIcon {
-        font-size: 30px;
-    }
-</style>
 <li class="dropdown messages-menu">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
         <i class="fa fa-bell-o"></i>
@@ -30,7 +22,10 @@
                             </div>
                             <h4>
                                 {{ $notification->title }}
-                                <small><i class="fa fa-clock-o"></i> {{ $notification->time_ago }}</small>
+                                <small>
+                                    <i class="fa fa-clock-o"></i> {{ $notification->time_ago }}
+                                    <i class="fa fa-close removeNotification" data-id="{{ $notification->id }}"></i>
+                                </small>
                             </h4>
                             <p>{{ $notification->message }}</p>
                         </a>
@@ -41,3 +36,32 @@
         </li>
     </ul>
 </li>
+
+<script>
+    $( document ).ready(function() {
+        $('.removeNotification').on('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var self = this;
+            $.ajax({
+                type: 'POST',
+                url: '{{ route('api.notification.read') }}',
+                data: {
+                    'id': $(this).data('id'),
+                    '_token': '{{ csrf_token() }}'
+                },
+                success: function(data) {
+                    if (data.updated) {
+                        var notification = $(self).closest('li');
+                        notification.addClass('animated fadeOut');
+                        setTimeout(function() {
+                            notification.remove();
+                        }, 510)
+                        var count = parseInt($('.notificationsCounter').text());
+                        $('.notificationsCounter').text(count - 1);
+                    }
+                }
+            });
+        });
+    });
+</script>
