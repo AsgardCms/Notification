@@ -26,4 +26,16 @@ class CacheNotificationDecorator extends BaseCacheDecorator implements Notificat
                 }
             );
     }
+
+    /**
+     * Mark the given notification id as "read"
+     * @param int $notificationId
+     * @return bool
+     */
+    public function markNotificationAsRead($notificationId)
+    {
+        $this->cache->tags($this->entityName)->flush();
+
+        return $this->repository->markNotificationAsRead($notificationId);
+    }
 }

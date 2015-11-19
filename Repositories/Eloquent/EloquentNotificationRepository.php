@@ -13,4 +13,17 @@ final class EloquentNotificationRepository extends EloquentBaseRepository implem
     {
         return $this->model->whereUserId($userId)->whereIsRead(false)->orderBy('created_at', 'desc')->take(10)->get();
     }
+
+    /**
+     * Mark the given notification id as "read"
+     * @param int $notificationId
+     * @return bool
+     */
+    public function markNotificationAsRead($notificationId)
+    {
+        $notification = $this->find($notificationId);
+        $notification->is_read = true;
+
+        return $notification->save();
+    }
 }
