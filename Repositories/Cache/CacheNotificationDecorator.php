@@ -70,4 +70,28 @@ class CacheNotificationDecorator extends BaseCacheDecorator implements Notificat
                 }
             );
     }
+
+    /**
+     * Delete all the notifications for the given user
+     * @param int $userId
+     * @return bool
+     */
+    public function deleteAllForUser($userId)
+    {
+        $this->cache->tags($this->entityName)->flush();
+
+        return $this->repository->deleteAllForUser($userId);
+    }
+
+    /**
+     * Mark all the notifications for the given user as read
+     * @param int $userId
+     * @return bool
+     */
+    public function markAllAsReadForUser($userId)
+    {
+        $this->cache->tags($this->entityName)->flush();
+
+        return $this->repository->markAllAsReadForUser($userId);
+    }
 }

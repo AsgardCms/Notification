@@ -56,4 +56,24 @@ final class EloquentNotificationRepository extends EloquentBaseRepository implem
     {
         return $this->model->whereUserId($userId)->whereIsRead(false)->orderBy('created_at', 'desc')->get();
     }
+
+    /**
+     * Delete all the notifications for the given user
+     * @param int $userId
+     * @return bool
+     */
+    public function deleteAllForUser($userId)
+    {
+        return $this->model->whereUserId($userId)->delete();
+    }
+
+    /**
+     * Mark all the notifications for the given user as read
+     * @param int $userId
+     * @return bool
+     */
+    public function markAllAsReadForUser($userId)
+    {
+        return $this->model->whereUserId($userId)->update(['is_read' => true]);
+    }
 }
