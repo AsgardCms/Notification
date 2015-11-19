@@ -57,6 +57,8 @@ Currently, [Laravel broadcasting](http://laravel.com/docs/5.1/events#broadcastin
 
 Usage is simple and straightforward:
 
+Inject the `Modules\Notification\Services\Notification` interface where you need it and assign it to a class variable.
+
 ### Send notification to logged in user
 
 ``` php
