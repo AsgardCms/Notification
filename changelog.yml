@@ -6,7 +6,7 @@ versions:
             - Mark notifications as read from the drop down
             - An index view with all the notifications for current user
             - Link to mark all notifications as read for current user
-            - Link to delete all notificaitons for current user
+            - Link to delete all notifications for current user
     "1.0.0":
         added:
             - Initial release
