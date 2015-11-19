@@ -9,4 +9,6 @@ return [
     'message' => 'Message',
     'mark all as read' => 'Mark all as read',
     'delete all' => 'Delete all',
+    'all notifications deleted' => 'All your notifications were successfully deleted.',
+    'all notifications marked as read' => 'All your notifications were successfully marked as read.',
 ];
