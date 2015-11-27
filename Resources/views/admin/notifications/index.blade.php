@@ -6,7 +6,7 @@
     <small><span class="badge">{{ $notifications->count() }}</span></small>
 </h1>
 <ol class="breadcrumb">
-    <li><a href="{{ URL::route('dashboard.index') }}"><i class="fa fa-dashboard"></i> {{ trans('core::core.breadcrumb.home') }}</a></li>
+    <li><a href="{{ route('dashboard.index') }}"><i class="fa fa-dashboard"></i> {{ trans('core::core.breadcrumb.home') }}</a></li>
     <li class="active">{{ trans('notification::messages.notifications') }}</li>
 </ol>
 @stop
@@ -32,7 +32,7 @@
                             <th>{{ trans('notification::messages.title') }}</th>
                             <th>{{ trans('notification::messages.message') }}</th>
                             <th>{{ trans('notification::messages.is read') }}</th>
-                            <th width="10%">{{ trans('core::core.table.actions') }}</th>
+                            <th width="10%" data-sortable="false">{{ trans('core::core.table.actions') }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -61,7 +61,7 @@
                                 </td>
                                 <td>
                                     <div class="btn-group">
-                                        <button class="btn btn-danger btn-flat" data-toggle="modal" data-target="#confirmation-{{ $notification->id }}"><i class="glyphicon glyphicon-trash"></i></button>
+                                        <button class="btn btn-danger btn-flat" data-toggle="modal" data-target="#modal-delete-confirmation" data-action-target="{{ route('admin.notification.notification.destroy', [$notification->id]) }}"><i class="fa fa-trash"></i></button>
                                     </div>
                                 </td>
                             </tr>
@@ -84,30 +84,7 @@
     </div>
     </div>
 </div>
-<?php if (isset($notifications)): ?>
-    <?php foreach ($notifications as $notification): ?>
-    <!-- Modal -->
-    <div class="modal fade modal-danger" id="confirmation-{{ $notification->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <h4 class="modal-title" id="myModalLabel">{{ trans('core::core.modal.title') }}</h4>
-                </div>
-                <div class="modal-body">
-                    {{ trans('core::core.modal.confirmation-message') }}
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline btn-flat" data-dismiss="modal">{{ trans('core::core.button.cancel') }}</button>
-                    {!! Form::open(['route' => ['admin.notification.notification.destroy', $notification->id], 'method' => 'delete', 'class' => 'pull-left']) !!}
-                        <button type="submit" class="btn btn-outline btn-flat"><i class="glyphicon glyphicon-trash"></i> {{ trans('core::core.button.delete') }}</button>
-                    {!! Form::close() !!}
-                </div>
-            </div>
-        </div>
-    </div>
-    <?php endforeach; ?>
-<?php endif; ?>
+@include('core::partials.delete-modal')
 <div class="modal fade modal-danger" id="confirmation-delete-all" tabindex="-1" role="dialog" aria-labelledby="deleteAll" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -160,17 +137,10 @@
             "sort": true,
             "info": true,
             "autoWidth": true,
-            "ordering": false,
+            "ordering": true,
             "language": {
                 "url": '<?php echo Module::asset("core:js/vendor/datatables/{$locale}.json") ?>'
-            },
-            "columns": [
-                null,
-                null,
-                null,
-                null,
-                { "sortable": false }
-            ]
+            }
         });
     });
 </script>
