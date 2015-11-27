@@ -1,5 +1,9 @@
 url: https://github.com/AsgardCms/Notification
 versions:
+    "1.2.0":
+        changed:
+            - Use the new datatables way of marking column not sortable
+            - Use the single removal modal setup
     "1.1.0":
         added:
             - Link in dropdown to mark notification as read
