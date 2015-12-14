@@ -21,7 +21,7 @@ class CreateNotificationsTable extends Migration
             $table->string('message');
             $table->boolean('is_read')->default(false);
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on(config('auth.table', 'users'))->onDelete('cascade');
         });
     }
 
