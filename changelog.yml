@@ -1,5 +1,8 @@
 url: https://github.com/AsgardCms/Notification
 versions:
+    "1.4.0":
+        changed:
+            - Use <code>$router</code> variable in routes file
     "1.3.0":
         changed:
             - Setting the View All text as translatable key
