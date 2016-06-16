@@ -2,6 +2,7 @@
 
 use Illuminate\Support\ServiceProvider;
 use Modules\Core\Contracts\Authentication;
+use Modules\Core\Traits\CanPublishConfiguration;
 use Modules\Notification\Composers\NotificationViewComposer;
 use Modules\Notification\Entities\Notification;
 use Modules\Notification\Repositories\Cache\CacheNotificationDecorator;
@@ -11,6 +12,7 @@ use Modules\Notification\Services\AsgardNotification;
 
 class NotificationServiceProvider extends ServiceProvider
 {
+    use CanPublishConfiguration;
     /**
      * Indicates if loading of the provider is deferred.
      *
@@ -27,6 +29,12 @@ class NotificationServiceProvider extends ServiceProvider
     {
         $this->registerBindings();
         $this->registerViewComposers();
+    }
+
+    public function boot()
+    {
+        $this->publishConfig('notification', 'config');
+        $this->publishConfig('notification', 'permissions');
     }
 
     /**
