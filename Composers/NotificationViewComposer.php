@@ -23,7 +23,7 @@ class NotificationViewComposer
 
     public function compose(View $view)
     {
-        $notifications = $this->notification->latestForUser($this->auth->check()->id);
+        $notifications = $this->notification->latestForUser($this->auth->id());
         $view->with('notifications', $notifications);
     }
 }

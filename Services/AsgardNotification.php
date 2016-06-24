@@ -35,7 +35,7 @@ final class AsgardNotification implements Notification
     public function push($title, $message, $icon, $link = null)
     {
         $notification = $this->notification->create([
-            'user_id' => $this->userId ?: $this->auth->check()->id,
+            'user_id' => $this->userId ?: $this->auth->id(),
             'icon_class' => $icon,
             'link' => $link,
             'title' => $title,

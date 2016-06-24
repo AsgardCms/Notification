@@ -26,7 +26,7 @@ class NotificationsController extends AdminBaseController
 
     public function index()
     {
-        $notifications = $this->notification->allForUser($this->auth->check()->id);
+        $notifications = $this->notification->allForUser($this->auth->id());
 
         return view('notification::admin.notifications.index', compact('notifications'));
     }
@@ -48,7 +48,7 @@ class NotificationsController extends AdminBaseController
 
     public function destroyAll()
     {
-        $this->notification->deleteAllForUser($this->auth->check()->id);
+        $this->notification->deleteAllForUser($this->auth->id());
 
         flash(trans('notification::messages.all notifications deleted'));
 
@@ -57,7 +57,7 @@ class NotificationsController extends AdminBaseController
 
     public function markAllAsRead()
     {
-        $this->notification->markAllAsReadForUser($this->auth->check()->id);
+        $this->notification->markAllAsReadForUser($this->auth->id());
 
         flash(trans('notification::messages.all notifications marked as read'));
 
