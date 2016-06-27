@@ -41,18 +41,16 @@ class NotificationsController extends AdminBaseController
     {
         $this->notification->destroy($notification);
 
-        flash(trans('core::core.messages.resource deleted', ['name' => 'Notification']));
-
-        return redirect()->route('admin.notification.notification.index');
+        return redirect()->route('admin.notification.notification.index')
+            ->withSuccess(trans('core::core.messages.resource deleted', ['name' => 'Notification']));
     }
 
     public function destroyAll()
     {
         $this->notification->deleteAllForUser($this->auth->id());
 
-        flash(trans('notification::messages.all notifications deleted'));
-
-        return redirect()->route('admin.notification.notification.index');
+        return redirect()->route('admin.notification.notification.index')
+            ->withSuccess(trans('notification::messages.all notifications deleted'));
     }
 
     public function markAllAsRead()
