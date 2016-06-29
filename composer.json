@@ -34,12 +34,6 @@
       "Modules\\": "Modules/"
     }
   },
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/nWidart/modules"
-    }
-  ],
   "extra": {
     "branch-alias": {
       "dev-2.0": "2.0.x-dev"
