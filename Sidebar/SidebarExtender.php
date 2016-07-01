@@ -1,4 +1,6 @@
-<?php namespace Modules\Notification\Sidebar;
+<?php
+
+namespace Modules\Notification\Sidebar;
 
 use Maatwebsite\Sidebar\Menu;
 use Modules\Core\Contracts\Authentication;

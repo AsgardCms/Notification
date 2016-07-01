@@ -1,4 +1,6 @@
-<?php namespace Modules\Notification\Providers;
+<?php
+
+namespace Modules\Notification\Providers;
 
 use Modules\Core\Providers\RoutingServiceProvider as CoreRoutingServiceProvider;
 

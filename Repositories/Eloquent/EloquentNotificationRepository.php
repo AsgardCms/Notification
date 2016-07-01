@@ -1,4 +1,6 @@
-<?php namespace Modules\Notification\Repositories\Eloquent;
+<?php
+
+namespace Modules\Notification\Repositories\Eloquent;
 
 use Modules\Core\Repositories\Eloquent\EloquentBaseRepository;
 use Modules\Notification\Repositories\NotificationRepository;

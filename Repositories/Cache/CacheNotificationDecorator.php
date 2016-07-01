@@ -1,4 +1,6 @@
-<?php namespace Modules\Notification\Repositories\Cache;
+<?php
+
+namespace Modules\Notification\Repositories\Cache;
 
 use Modules\Core\Repositories\Cache\BaseCacheDecorator;
 use Modules\Notification\Repositories\NotificationRepository;

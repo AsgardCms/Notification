@@ -1,4 +1,6 @@
-<?php namespace Modules\Notification\Composers;
+<?php
+
+namespace Modules\Notification\Composers;
 
 use Illuminate\Contracts\View\View;
 use Modules\Core\Contracts\Authentication;

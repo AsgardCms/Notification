@@ -1,4 +1,6 @@
-<?php namespace Modules\Notification\Http\Controllers\Api;
+<?php
+
+namespace Modules\Notification\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;

@@ -1,4 +1,6 @@
-<?php namespace Modules\Notification\Services;
+<?php
+
+namespace Modules\Notification\Services;
 
 use Modules\Core\Contracts\Authentication;
 use Modules\Notification\Events\BroadcastNotification;

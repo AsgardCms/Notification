@@ -1,4 +1,6 @@
-<?php namespace Modules\Notification\Http\Controllers\Admin;
+<?php
+
+namespace Modules\Notification\Http\Controllers\Admin;
 
 use Modules\Core\Contracts\Authentication;
 use Modules\Core\Http\Controllers\Admin\AdminBaseController;

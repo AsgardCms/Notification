@@ -1,4 +1,6 @@
-<?php namespace Modules\Notification\Providers;
+<?php
+
+namespace Modules\Notification\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Modules\Core\Contracts\Authentication;
