@@ -3,8 +3,8 @@
 namespace Modules\Notification\Composers;
 
 use Illuminate\Contracts\View\View;
-use Modules\Core\Contracts\Authentication;
 use Modules\Notification\Repositories\NotificationRepository;
+use Modules\User\Contracts\Authentication;
 
 class NotificationViewComposer
 {

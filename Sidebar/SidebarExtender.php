@@ -3,7 +3,7 @@
 namespace Modules\Notification\Sidebar;
 
 use Maatwebsite\Sidebar\Menu;
-use Modules\Core\Contracts\Authentication;
+use Modules\User\Contracts\Authentication;
 
 class SidebarExtender implements \Maatwebsite\Sidebar\SidebarExtender
 {

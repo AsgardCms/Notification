@@ -2,9 +2,9 @@
 
 namespace Modules\Notification\Services;
 
-use Modules\Core\Contracts\Authentication;
 use Modules\Notification\Events\BroadcastNotification;
 use Modules\Notification\Repositories\NotificationRepository;
+use Modules\User\Contracts\Authentication;
 
 final class AsgardNotification implements Notification
 {

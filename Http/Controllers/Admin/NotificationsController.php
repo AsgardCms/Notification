@@ -2,10 +2,10 @@
 
 namespace Modules\Notification\Http\Controllers\Admin;
 
-use Modules\Core\Contracts\Authentication;
 use Modules\Core\Http\Controllers\Admin\AdminBaseController;
 use Modules\Notification\Entities\Notification;
 use Modules\Notification\Repositories\NotificationRepository;
+use Modules\User\Contracts\Authentication;
 
 class NotificationsController extends AdminBaseController
 {

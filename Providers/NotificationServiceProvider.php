@@ -3,7 +3,6 @@
 namespace Modules\Notification\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Modules\Core\Contracts\Authentication;
 use Modules\Core\Traits\CanPublishConfiguration;
 use Modules\Notification\Composers\NotificationViewComposer;
 use Modules\Notification\Entities\Notification;
@@ -11,6 +10,7 @@ use Modules\Notification\Repositories\Cache\CacheNotificationDecorator;
 use Modules\Notification\Repositories\Eloquent\EloquentNotificationRepository;
 use Modules\Notification\Repositories\NotificationRepository;
 use Modules\Notification\Services\AsgardNotification;
+use Modules\User\Contracts\Authentication;
 
 class NotificationServiceProvider extends ServiceProvider
 {
