@@ -37,6 +37,7 @@ class NotificationServiceProvider extends ServiceProvider
     {
         $this->publishConfig('notification', 'config');
         $this->publishConfig('notification', 'permissions');
+        $this->loadMigrationsFrom(__DIR__.'/../Database/Migrations');
     }
 
     /**
