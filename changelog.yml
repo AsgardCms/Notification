@@ -7,6 +7,7 @@ versions:
             - Register the notification sidebar via event handler
         fixed:
             - Fixed spelling of "Unread"
+            - Fixed stray <code>flash()</code> call
         removed:
             - Removing grumphp
     "2.0@unreleased":
