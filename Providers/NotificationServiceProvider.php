@@ -45,7 +45,7 @@ class NotificationServiceProvider extends ServiceProvider
     {
         $this->publishConfig('notification', 'config');
         $this->publishConfig('notification', 'permissions');
-        $this->loadMigrationsFrom(__DIR__.'/../Database/Migrations');
+        $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
     }
 
     /**
@@ -60,7 +60,9 @@ class NotificationServiceProvider extends ServiceProvider
 
     private function registerBindings()
     {
-        $this->app->bind(NotificationRepository::class, function () {
+        $this->app->bind(
+            NotificationRepository::class,
+            function () {
                 $repository = new EloquentNotificationRepository(new Notification());
 
                 if (! config('app.cache')) {

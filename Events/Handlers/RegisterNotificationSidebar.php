@@ -2,8 +2,6 @@
 
 namespace Modules\Notification\Events\Handlers;
 
-use Maatwebsite\Sidebar\Group;
-use Maatwebsite\Sidebar\Item;
 use Modules\Core\Sidebar\AbstractAdminSidebar;
 
 class RegisterNotificationSidebar extends AbstractAdminSidebar

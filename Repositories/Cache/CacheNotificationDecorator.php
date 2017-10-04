@@ -22,7 +22,9 @@ class CacheNotificationDecorator extends BaseCacheDecorator implements Notificat
     {
         return $this->cache
             ->tags([$this->entityName, 'global'])
-            ->remember("{$this->locale}.{$this->entityName}.latestForUser.{$userId}", $this->cacheTime,
+            ->remember(
+                "{$this->locale}.{$this->entityName}.latestForUser.{$userId}",
+                $this->cacheTime,
                 function () use ($userId) {
                     return $this->repository->latestForUser($userId);
                 }
@@ -50,7 +52,9 @@ class CacheNotificationDecorator extends BaseCacheDecorator implements Notificat
     {
         return $this->cache
             ->tags([$this->entityName, 'global'])
-            ->remember("{$this->locale}.{$this->entityName}.allForUser.{$userId}", $this->cacheTime,
+            ->remember(
+                "{$this->locale}.{$this->entityName}.allForUser.{$userId}",
+                $this->cacheTime,
                 function () use ($userId) {
                     return $this->repository->allForUser($userId);
                 }
@@ -66,7 +70,9 @@ class CacheNotificationDecorator extends BaseCacheDecorator implements Notificat
     {
         return $this->cache
             ->tags([$this->entityName, 'global'])
-            ->remember("{$this->locale}.{$this->entityName}.allUnreadForUser.{$userId}", $this->cacheTime,
+            ->remember(
+                "{$this->locale}.{$this->entityName}.allUnreadForUser.{$userId}",
+                $this->cacheTime,
                 function () use ($userId) {
                     return $this->repository->allUnreadForUser($userId);
                 }
