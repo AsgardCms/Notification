@@ -3,9 +3,12 @@
 namespace Modules\Notification\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Modules\Core\Events\BuildingSidebar;
+use Modules\Core\Traits\CanGetSidebarClassForModule;
 use Modules\Core\Traits\CanPublishConfiguration;
 use Modules\Notification\Composers\NotificationViewComposer;
 use Modules\Notification\Entities\Notification;
+use Modules\Notification\Events\Handlers\RegisterNotificationSidebar;
 use Modules\Notification\Repositories\Cache\CacheNotificationDecorator;
 use Modules\Notification\Repositories\Eloquent\EloquentNotificationRepository;
 use Modules\Notification\Repositories\NotificationRepository;
@@ -14,7 +17,7 @@ use Modules\User\Contracts\Authentication;
 
 class NotificationServiceProvider extends ServiceProvider
 {
-    use CanPublishConfiguration;
+    use CanPublishConfiguration, CanGetSidebarClassForModule;
     /**
      * Indicates if loading of the provider is deferred.
      *
@@ -31,6 +34,11 @@ class NotificationServiceProvider extends ServiceProvider
     {
         $this->registerBindings();
         $this->registerViewComposers();
+
+        $this->app['events']->listen(
+            BuildingSidebar::class,
+            $this->getSidebarClassForModule('blog', RegisterNotificationSidebar::class)
+        );
     }
 
     public function boot()

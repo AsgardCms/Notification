@@ -1,6 +1,8 @@
 url: https://github.com/AsgardCms/Notification
 versions:
     "3.0@unreleased":
+        changed:
+            - Register the notification sidebar via event handler
         removed:
             - Removing grumphp
     "2.0@unreleased":
