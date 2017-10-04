@@ -22,7 +22,6 @@
   "require-dev": {
     "phpunit/phpunit": "~4.0",
     "orchestra/testbench": "3.3.*",
-    "phpro/grumphp": "^0.9.1",
     "friendsofphp/php-cs-fixer": "^1.11"
   },
   "autoload": {

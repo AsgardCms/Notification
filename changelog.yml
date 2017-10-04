@@ -1,5 +1,8 @@
 url: https://github.com/AsgardCms/Notification
 versions:
+    "3.0@unreleased":
+        removed:
+            - Removing grumphp
     "2.0@unreleased":
         added:
             - Laravel 5.2 compatibility
