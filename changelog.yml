@@ -1,6 +1,8 @@
 url: https://github.com/AsgardCms/Notification
 versions:
     "3.0@unreleased":
+        added:
+            - AsgardCMS v3 support
         changed:
             - Register the notification sidebar via event handler
         removed:
