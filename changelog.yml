@@ -5,6 +5,8 @@ versions:
             - AsgardCMS v3 support
         changed:
             - Register the notification sidebar via event handler
+        fixed:
+            - Fixed spelling of "Unread"
         removed:
             - Removing grumphp
     "2.0@unreleased":
