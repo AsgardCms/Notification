@@ -1,6 +1,6 @@
 url: https://github.com/AsgardCms/Notification
 versions:
-    "3.0@unreleased":
+    "3.0.0@unreleased":
         added:
             - AsgardCMS v3 support
         changed:
@@ -10,7 +10,7 @@ versions:
             - Fixed stray <code>flash()</code> call
         removed:
             - Removing grumphp
-    "2.0@unreleased":
+    "2.0.0":
         added:
             - Laravel 5.2 compatibility
         changed:
