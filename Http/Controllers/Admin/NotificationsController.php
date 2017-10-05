@@ -1,9 +1,11 @@
-<?php namespace Modules\Notification\Http\Controllers\Admin;
+<?php
 
-use Modules\Core\Contracts\Authentication;
+namespace Modules\Notification\Http\Controllers\Admin;
+
 use Modules\Core\Http\Controllers\Admin\AdminBaseController;
 use Modules\Notification\Entities\Notification;
 use Modules\Notification\Repositories\NotificationRepository;
+use Modules\User\Contracts\Authentication;
 
 class NotificationsController extends AdminBaseController
 {
@@ -26,7 +28,7 @@ class NotificationsController extends AdminBaseController
 
     public function index()
     {
-        $notifications = $this->notification->allForUser($this->auth->check()->id);
+        $notifications = $this->notification->allForUser($this->auth->id());
 
         return view('notification::admin.notifications.index', compact('notifications'));
     }
@@ -41,26 +43,23 @@ class NotificationsController extends AdminBaseController
     {
         $this->notification->destroy($notification);
 
-        flash(trans('core::core.messages.resource deleted', ['name' => 'Notification']));
-
-        return redirect()->route('admin.notification.notification.index');
+        return redirect()->route('admin.notification.notification.index')
+            ->withSuccess(trans('core::core.messages.resource deleted', ['name' => 'Notification']));
     }
 
     public function destroyAll()
     {
-        $this->notification->deleteAllForUser($this->auth->check()->id);
+        $this->notification->deleteAllForUser($this->auth->id());
 
-        flash(trans('notification::messages.all notifications deleted'));
-
-        return redirect()->route('admin.notification.notification.index');
+        return redirect()->route('admin.notification.notification.index')
+            ->withSuccess(trans('notification::messages.all notifications deleted'));
     }
 
     public function markAllAsRead()
     {
-        $this->notification->markAllAsReadForUser($this->auth->check()->id);
+        $this->notification->markAllAsReadForUser($this->auth->id());
 
-        flash(trans('notification::messages.all notifications marked as read'));
-
-        return redirect()->route('admin.notification.notification.index');
+        return redirect()->route('admin.notification.notification.index')
+            ->withSuccess(trans('notification::messages.all notifications marked as read'));
     }
 }

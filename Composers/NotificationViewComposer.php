@@ -1,8 +1,10 @@
-<?php namespace Modules\Notification\Composers;
+<?php
+
+namespace Modules\Notification\Composers;
 
 use Illuminate\Contracts\View\View;
-use Modules\Core\Contracts\Authentication;
 use Modules\Notification\Repositories\NotificationRepository;
+use Modules\User\Contracts\Authentication;
 
 class NotificationViewComposer
 {
@@ -23,7 +25,7 @@ class NotificationViewComposer
 
     public function compose(View $view)
     {
-        $notifications = $this->notification->latestForUser($this->auth->check()->id);
+        $notifications = $this->notification->latestForUser($this->auth->id());
         $view->with('notifications', $notifications);
     }
 }

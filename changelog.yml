@@ -1,5 +1,21 @@
 url: https://github.com/AsgardCms/Notification
 versions:
+    "3.0@unreleased":
+        added:
+            - AsgardCMS v3 support
+        changed:
+            - Register the notification sidebar via event handler
+        fixed:
+            - Fixed spelling of "Unread"
+            - Fixed stray <code>flash()</code> call
+        removed:
+            - Removing grumphp
+    "2.0@unreleased":
+        added:
+            - Laravel 5.2 compatibility
+        changed:
+            - Using new more flexible way of handle permissions via middleware
+            - Removing laracasts/flash dependency
     "1.4.0":
         changed:
             - Use <code>$router</code> variable in routes file

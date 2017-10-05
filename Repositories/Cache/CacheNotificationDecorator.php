@@ -1,4 +1,6 @@
-<?php namespace Modules\Notification\Repositories\Cache;
+<?php
+
+namespace Modules\Notification\Repositories\Cache;
 
 use Modules\Core\Repositories\Cache\BaseCacheDecorator;
 use Modules\Notification\Repositories\NotificationRepository;
@@ -19,8 +21,10 @@ class CacheNotificationDecorator extends BaseCacheDecorator implements Notificat
     public function latestForUser($userId)
     {
         return $this->cache
-            ->tags($this->entityName, 'global')
-            ->remember("{$this->locale}.{$this->entityName}.latestForUser.{$userId}", $this->cacheTime,
+            ->tags([$this->entityName, 'global'])
+            ->remember(
+                "{$this->locale}.{$this->entityName}.latestForUser.{$userId}",
+                $this->cacheTime,
                 function () use ($userId) {
                     return $this->repository->latestForUser($userId);
                 }
@@ -47,8 +51,10 @@ class CacheNotificationDecorator extends BaseCacheDecorator implements Notificat
     public function allForUser($userId)
     {
         return $this->cache
-            ->tags($this->entityName, 'global')
-            ->remember("{$this->locale}.{$this->entityName}.allForUser.{$userId}", $this->cacheTime,
+            ->tags([$this->entityName, 'global'])
+            ->remember(
+                "{$this->locale}.{$this->entityName}.allForUser.{$userId}",
+                $this->cacheTime,
                 function () use ($userId) {
                     return $this->repository->allForUser($userId);
                 }
@@ -63,8 +69,10 @@ class CacheNotificationDecorator extends BaseCacheDecorator implements Notificat
     public function allUnreadForUser($userId)
     {
         return $this->cache
-            ->tags($this->entityName, 'global')
-            ->remember("{$this->locale}.{$this->entityName}.allUnreadForUser.{$userId}", $this->cacheTime,
+            ->tags([$this->entityName, 'global'])
+            ->remember(
+                "{$this->locale}.{$this->entityName}.allUnreadForUser.{$userId}",
+                $this->cacheTime,
                 function () use ($userId) {
                     return $this->repository->allUnreadForUser($userId);
                 }

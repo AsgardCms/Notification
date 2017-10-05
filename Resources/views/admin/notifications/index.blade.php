@@ -56,7 +56,7 @@
                                 </td>
                                 <td>
                                     <a href="{{ $notification->link }}">
-                                        {{ $notification->is_read ? 'Read' : 'Un read' }}
+                                        {{ $notification->is_read ? 'Read' : 'Unread' }}
                                     </a>
                                 </td>
                                 <td>

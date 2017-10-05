@@ -1,4 +1,6 @@
-<?php namespace Modules\Notification\Events;
+<?php
+
+namespace Modules\Notification\Events;
 
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Contracts\Queue\ShouldQueue;

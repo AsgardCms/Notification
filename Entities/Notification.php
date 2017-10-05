@@ -1,4 +1,6 @@
-<?php namespace Modules\Notification\Entities;
+<?php
+
+namespace Modules\Notification\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -24,7 +26,7 @@ class Notification extends Model
      */
     public function user()
     {
-        $driver = config('asgard.user.users.driver');
+        $driver = config('asgard.user.config.driver');
 
         return $this->belongsTo("Modules\\User\\Entities\\{$driver}\\User");
     }

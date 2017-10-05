@@ -2,9 +2,9 @@
 
 return [
     'notification.notifications' => [
-        'index',
-        'destroy',
-        'destroyAll',
-        'markAllAsRead',
+        'index' => 'notification::messages.list resource',
+        'destroy' => 'notification::messages.destroy resource',
+        'destroyAll' => 'notification::messages.destroy all resource',
+        'markAllAsRead' => 'notification::messages.markAllAsRead resource',
     ],
 ];
