@@ -8,7 +8,6 @@ versions:
         changed:
             - Register the notification sidebar via event handler
             - Notification javascript code is pushed to the js-stack in the footer
-        fixed:
             - Fixed spelling of "Unread"
             - Fixed stray <code>flash()</code> call
         removed:
