@@ -36,11 +36,27 @@ public function push($title, $message, $icon, $link = null);
 
 ## Installation
 
-#### Require the module in your project
+### Module Download
+
+Using AsgardCMS's module download command:
 
 ``` bash
-composer require asgardcms/notification-module
+php artisan asgard:download:module asgardcms/notification --migrations
 ```
+
+This will download the module and run its migrations .
+
+This is the recommended way if you wish to customise the fields, views, etc.
+
+### Composer
+
+Execute the following command in your terminal:
+
+``` bash
+composer require asgardcms/blog-module
+```
+
+**Note: After installation you'll have to give you the required permissions to get to the blog module pages in the backend.**
 
 #### Run migrations
 
@@ -48,10 +64,10 @@ composer require asgardcms/notification-module
 php artisan module:migrate notification
 ```
 
-#### Publish the configuration
+### Publish the configuration
 
 ``` bash
-php artisan module:publish notification
+php artisan module:publish-config notification
 ```
 
 #### Real time?
