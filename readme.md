@@ -58,7 +58,7 @@ composer require asgardcms/blog-module
 
 **Note: After installation you'll have to give you the required permissions to get to the blog module pages in the backend.**
 
-#### Run migrations
+### Run migrations
 
 ``` bash
 php artisan module:migrate notification
@@ -70,7 +70,7 @@ php artisan module:migrate notification
 php artisan module:publish-config notification
 ```
 
-#### Real time?
+## Real time?
 
 If you want real time notifications over websockets, you need to configure the `broadcasting.php` config file. After that is done, set the `asgard.notification.config.real-time` option to `true`.
 
