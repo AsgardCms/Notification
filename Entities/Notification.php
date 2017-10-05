@@ -41,7 +41,7 @@ class Notification extends Model
         return $this->created_at->diffForHumans();
     }
 
-    public function isRead()
+    public function isRead() : bool
     {
         return $this->is_read === true;
     }
