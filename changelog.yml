@@ -1,10 +1,12 @@
 url: https://github.com/AsgardCms/Notification
 versions:
-    "3.0.0@unreleased":
+    "3.0.0":
         added:
             - AsgardCMS v3 support
+            - <code>pusher/pusher-php-server</code> to the composer suggest array
         changed:
             - Register the notification sidebar via event handler
+            - Notification javascript code is pushed to the js-stack in the footer
         fixed:
             - Fixed spelling of "Unread"
             - Fixed stray <code>flash()</code> call
