@@ -4,6 +4,7 @@ versions:
         added:
             - AsgardCMS v3 support
             - <code>pusher/pusher-php-server</code> to the composer suggest array
+            - Testing the <code>NotificationRepository</code>
         changed:
             - Register the notification sidebar via event handler
             - Notification javascript code is pushed to the js-stack in the footer
