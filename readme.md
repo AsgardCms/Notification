@@ -58,7 +58,7 @@ composer require asgardcms/blog-module
 
 **Note: After installation you'll have to give you the required permissions to get to the blog module pages in the backend.**
 
-### Run migrations
+#### Run migrations
 
 ``` bash
 php artisan module:migrate notification
