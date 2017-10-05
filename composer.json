@@ -40,6 +40,9 @@
       "dev-2.0": "2.0.x-dev"
     }
   },
+  "suggest": {
+    "pusher/pusher-php-server": "Allows notifications to enable real-time notifications."
+  },
   "minimum-stability": "dev",
   "prefer-stable": true
 }
