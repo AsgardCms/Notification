@@ -38,6 +38,7 @@
     </ul>
 </li>
 
+@push('js-stack')
 <script>
     $( document ).ready(function() {
         $('.removeNotification').on('click', function(e) {
@@ -66,3 +67,4 @@
         });
     });
 </script>
+@endpush
