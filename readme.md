@@ -36,13 +36,20 @@ public function push($title, $message, $icon, $link = null);
 ## Installation
 
 #### Require the module in your project
-```
+
+``` bash
 composer require asgardcms/notification-module
+```
+
+#### Run migrations
+
+``` bash
+php artisan module:migrate notification
 ```
 
 #### Publish the configuration
 
-```
+``` bash
 php artisan module:publish notification
 ```
 
