@@ -50,6 +50,16 @@ final class EloquentNotificationRepository extends EloquentBaseRepository implem
     }
 
     /**
+     * Get all the read notifications for the given user id
+     * @param int $userId
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function allReadForUser($userId)
+    {
+        return $this->model->whereUserId($userId)->whereIsRead(true)->orderBy('created_at', 'desc')->get();
+    }
+
+    /**
      * Get all the unread notifications for the given user id
      * @param int $userId
      * @return \Illuminate\Database\Eloquent\Collection

@@ -62,6 +62,24 @@ class CacheNotificationDecorator extends BaseCacheDecorator implements Notificat
     }
 
     /**
+     * Get all the read notifications for the given user id
+     * @param int $userId
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function allReadForUser($userId)
+    {
+        return $this->cache
+            ->tags([$this->entityName, 'global'])
+            ->remember(
+                "{$this->locale}.{$this->entityName}.allReadForUser.{$userId}",
+                $this->cacheTime,
+                function () use ($userId) {
+                    return $this->repository->allReadForUser($userId);
+                }
+            );
+    }
+
+    /**
      * Get all the unread notifications for the given user id
      * @param int $userId
      * @return \Illuminate\Database\Eloquent\Collection

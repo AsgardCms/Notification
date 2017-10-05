@@ -38,6 +38,13 @@ interface NotificationRepository extends BaseRepository
     public function allUnreadForUser($userId);
 
     /**
+     * Get all the read notifications for the given user id
+     * @param int $userId
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function allReadForUser($userId);
+
+    /**
      * Delete all the notifications for the given user
      * @param int $userId
      * @return bool
