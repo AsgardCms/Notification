@@ -53,7 +53,7 @@ This is the recommended way if you wish to customise the fields, views, etc.
 Execute the following command in your terminal:
 
 ``` bash
-composer require asgardcms/notification
+composer require asgardcms/notification-module
 ```
 
 **Note: After installation you'll have to give you the required permissions to get to the blog module pages in the backend.**
