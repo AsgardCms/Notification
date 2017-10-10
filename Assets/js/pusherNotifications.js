@@ -6,7 +6,7 @@
             noNotifications: ".noNotifications"
         };
 
-    function PusherNotifications(element, options) {
+    function pusherNotifications(element, options) {
         this.element = element;
         this.settings = $.extend({}, defaults, options);
         this._defaults = defaults;
@@ -14,7 +14,7 @@
         this.init();
     }
 
-    $.extend(PusherNotifications.prototype, {
+    $.extend(pusherNotifications.prototype, {
         getTemplate: function () {
             return '<li>' +
                 '<a href="#">' +
@@ -67,7 +67,7 @@
     $.fn[pluginName] = function (options) {
         return this.each(function () {
             if (!$.data(this, "plugin_" + pluginName)) {
-                $.data(this, "plugin_" + pluginName, new PusherNotifications(this, options));
+                $.data(this, "plugin_" + pluginName, new pusherNotifications(this, options));
             }
         });
     };
