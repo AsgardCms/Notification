@@ -6,7 +6,7 @@
             noNotifications: ".noNotifications"
         };
 
-    function pusherNotifications(element, options) {
+    function PusherNotifications(element, options) {
         this.element = element;
         this.settings = $.extend({}, defaults, options);
         this._defaults = defaults;
@@ -14,7 +14,7 @@
         this.init();
     }
 
-    $.extend(pusherNotifications.prototype, {
+    $.extend(PusherNotifications.prototype, {
         getTemplate: function () {
             return '<li>' +
                 '<a href="#">' +
@@ -48,7 +48,10 @@
         },
         init: function () {
             var self = this;
-            this.pusher = new Pusher(this.settings.pusherKey);
+            this.pusher = new Pusher(this.settings.pusherKey, {
+                cluster: this.settings.pusherCluster,
+                encrypted: this.settings.pusherEncrypted,
+            });
             this.pusherChannel = this.pusher.subscribe('asgardcms.notifications.' + this.settings.loggedInUserId);
             this.pusherChannel.bind('Modules\\Notification\\Events\\BroadcastNotification', function (message) {
                 if ($(self.settings.noNotifications).length) {
@@ -64,7 +67,7 @@
     $.fn[pluginName] = function (options) {
         return this.each(function () {
             if (!$.data(this, "plugin_" + pluginName)) {
-                $.data(this, "plugin_" + pluginName, new pusherNotifications(this, options));
+                $.data(this, "plugin_" + pluginName, new PusherNotifications(this, options));
             }
         });
     };
