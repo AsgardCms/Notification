@@ -1,5 +1,8 @@
 url: https://github.com/AsgardCms/Notification
 versions:
+    "3.0.1@unreleased":
+        changed:
+            - Upgrade Pusher notifications plugin to use the cluster and encryption settings
     "3.0.0":
         added:
             - AsgardCMS v3 support
