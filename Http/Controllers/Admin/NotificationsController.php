@@ -59,8 +59,7 @@ class NotificationsController extends AdminBaseController
     {
         $this->notification->markAllAsReadForUser($this->auth->id());
 
-        flash(trans('notification::messages.all notifications marked as read'));
-
-        return redirect()->route('admin.notification.notification.index');
+        return redirect()->route('admin.notification.notification.index')
+            ->withSuccess(trans('notification::messages.all notifications marked as read'));
     }
 }
