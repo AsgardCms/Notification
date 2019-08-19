@@ -28,6 +28,7 @@ class NotificationsController extends AdminBaseController
 
     public function index()
     {
+        
         $notifications = $this->notification->allForUser($this->auth->id());
 
         return view('notification::admin.notifications.index', compact('notifications'));
