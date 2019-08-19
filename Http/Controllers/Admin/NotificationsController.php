@@ -28,8 +28,13 @@ class NotificationsController extends AdminBaseController
 
     public function index()
     {
-        
-        $notifications = $this->notification->allForUser($this->auth->id());
+        $user = \Sentinel::getUser();
+
+        if($user->inRole('employee')) {
+            $notifications = $this->notification->allForUser($this->auth->id());
+        } else{
+            $notifications = $this->notification->all();            
+        }    
 
         return view('notification::admin.notifications.index', compact('notifications'));
     }

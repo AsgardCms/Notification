@@ -16,6 +16,10 @@ final class EloquentNotificationRepository extends EloquentBaseRepository implem
         return $this->model->whereUserId($userId)->whereIsRead(false)->orderBy('created_at', 'desc')->take(10)->get();
     }
 
+    public function latestForAdmin(){
+        return $this->model->whereIsRead(false)->orderBy('created_at', 'desc')->take(10)->get();        
+    }
+
     /**
      * Mark the given notification id as "read"
      * @param int $notificationId

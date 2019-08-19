@@ -57,4 +57,6 @@ interface NotificationRepository extends BaseRepository
      * @return bool
      */
     public function markAllAsReadForUser($userId);
+
+    public function latestForAdmin();        
 }
