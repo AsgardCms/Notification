@@ -1,5 +1,5 @@
 {
-  "name": "asgardcms/notification-module",
+  "name": "romininteractive/notification-module",
   "description": "Module handling the real time notifications",
   "type": "asgard-module",
   "keywords": [
